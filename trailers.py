@@ -3,10 +3,8 @@ import requests
 import re
 import json
 
-#query = str(input("Enter trailer name: "))
-query = "sword art online"
+query = str(input("Enter trailer name: "))
 
-#imdb = requests.get('https://www.imdb.com/find?q=' + query + '&s=tt&ttype=ft&exact=true&ref_=fn_tt_ex')
 imdb = requests.get('https://www.imdb.com/find?q=' + query + '&s=tt&ttype=ft&ref_=fn_ft')
 soup = BeautifulSoup(imdb.text, 'html.parser')
 results_element = soup.findAll('td', {'class': 'result_text'})
